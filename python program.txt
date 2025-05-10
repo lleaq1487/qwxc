@@ -1,0 +1,187 @@
+a) Write a python program to check if the number is prime or not. 
+
+# Python Program to Check if a Number is Prime
+
+# Input from user
+num = int(input("Enter a number: "))
+
+# Prime check
+if num <= 1:
+    print(num, "is not a prime number.")
+else:
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            print(num, "is not a prime number.")
+            break
+    else:
+        print(num, "is a prime number.")
+
+
+b) Write a python program to find greatest of four numbers entered by user.
+
+# Python Program to Find the Greatest of Four Numbers
+
+# Taking input from the user
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+num4 = float(input("Enter fourth number: "))
+
+# Finding the greatest number
+greatest = max(num1, num2, num3, num4)
+
+# Displaying the result
+print("The greatest number is:", greatest)
+
+
+c) Write and run a Python program that asks the user for a temperature in Celsius and converts and 
+output the temperature in Fahrenheit.  
+
+# Python Program to Convert Celsius to Fahrenheit
+
+# Taking input from the user
+celsius = float(input("Enter temperature in Celsius: "))
+
+# Converting to Fahrenheit
+fahrenheit = (celsius * 9/5) + 32
+
+# Displaying the result
+print(f"The temperature in Fahrenheit is: {fahrenheit}°F")
+
+d)Write python program to perform following operations on Lists: 
+a) Create list 
+b) Access list 
+c) Update list (Add item, Remove item) 
+d) Delete list 
+
+
+# Python Program to Perform Operations on Lists
+
+# a) Create List
+fruits = ["apple", "banana", "mango"]
+print("Original List:", fruits)
+
+# b) Access List Elements
+print("First fruit:", fruits[0])
+print("Last fruit:", fruits[-1])
+
+# c) Update List
+# Adding items
+fruits.append("orange")         # Adds at the end
+fruits.insert(1, "grape")       # Inserts at index 1
+print("After Adding Items:", fruits)
+
+# Removing items
+fruits.remove("banana")         # Removes by value
+removed_item = fruits.pop()     # Removes last item
+print("After Removing Items:", fruits)
+print("Popped item:", removed_item)
+
+# d) Delete List
+del fruits
+# print(fruits)  # This will give an error because list is deleted
+
+print("List deleted successfully.")
+
+
+
+(4) Here is an algorithm to print out n! (n factorial) from 0! to 19!: 
+1. Set f = 1 
+2. Set n = 0 
+3. Repeat the following 20 times: 
+a. Output n, "! = ", f 
+b. Add 1 to n 
+c. Multiply f by n 
+Using a for loop, write and run a Python program for this algorithm.
+
+ans :- # Python program to print factorials from 0! to 19! using a for loop
+
+f = 1   # Step 1: Set f = 1
+n = 0   # Step 2: Set n = 0
+
+# Step 3: Repeat 20 times (from 0 to 19)
+for i in range(20):
+    print(f"{n}! = {f}")  # a. Output n! = f
+    n += 1                # b. Add 1 to n
+    f *= n                # c. Multiply f by n
+
+
+
+(5) Modify the program above using a while loop so it prints out all of the factorial values that are 
+less than 1 billion. 
+
+# Python program to print factorials less than 1 billion using a while loop
+
+f = 1   # Initial factorial value
+n = 0   # Starting from 0!
+
+# Loop while factorial is less than 1,000,000,000
+while f < 1_000_000_000:
+    print(f"{n}! = {f}")
+    n += 1
+    f *= n
+
+
+(6) Write a python program to find the minimum in the array and find its index in the array.
+
+# Python Program to Find Minimum Value and Its Index in an Array
+
+# Sample array (you can modify or take input from user)
+numbers = [15, 8, 42, 3, 27, 5]
+
+# Find the minimum value
+min_value = min(numbers)
+
+# Find the index of the minimum value
+min_index = numbers.index(min_value)
+
+# Display the results
+print("Array:", numbers)
+print("Minimum value:", min_value)
+print("Index of minimum value:", min_index)
+
+(7) Write a python program to implement bubble sort using function. 
+
+# Function to perform Bubble Sort
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):  # Traverse through all elements
+        for j in range(0, n-i-1):  # Last i elements are already sorted
+            if arr[j] > arr[j+1]:  # Swap if the element found is greater
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+# Main program
+numbers = [64, 34, 25, 12, 22, 11, 90]
+
+print("Original array:", numbers)
+bubble_sort(numbers)
+print("Sorted array:", numbers)
+
+
+(8) Write a python program to read 3 subject marks and display pass or failed using class and object. 
+
+# Python Program to Check Pass or Fail using Class and Object
+
+class Student:
+    def __init__(self):
+        self.sub1 = 0
+        self.sub2 = 0
+        self.sub3 = 0
+
+    def get_marks(self):
+        self.sub1 = int(input("Enter marks for Subject 1: "))
+        self.sub2 = int(input("Enter marks for Subject 2: "))
+        self.sub3 = int(input("Enter marks for Subject 3: "))
+
+    def check_result(self):
+        if self.sub1 >= 35 and self.sub2 >= 35 and self.sub3 >= 35:
+            print("Result: PASS ✅")
+        else:
+            print("Result: FAIL ❌")
+
+# Main Program
+student1 = Student()
+student1.get_marks()
+student1.check_result()
+
+
